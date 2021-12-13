@@ -74,7 +74,7 @@ SET
 
 first_name='Aizda'
 WHERE 
-first_name='koni'
+customer_id=2
 RETURNING*
 
 SELECT 
