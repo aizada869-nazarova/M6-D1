@@ -54,3 +54,43 @@ FROM
 customer
 ORDER BY customer_id
 LIMIT 5 OFFSET 10
+
+
+EX3
+1)
+INSERT INTO 
+customer (store_id,
+first_name,
+last_name,
+email,
+address_id
+)
+VALUES
+(77, 'Aizda', 'Nazarova', 'joni@gmail.com', 77)
+RETURNING*
+
+2)UPDATE customer
+SET
+
+first_name='Aizda'
+WHERE 
+first_name='koni'
+RETURNING*
+
+SELECT 
+c.first_name AS customer_first_name,
+c.last_name AS customer_last_name,
+s.first_name AS staff_first_name,
+s.last_name AS staff_last_name, 
+amount
+FROM payment p 
+JOIN customer c
+ON p.customer_id=c.customer_id
+JOIN staff s
+
+
+
+
+-- ROUND((SELECT AVG(amount) FROM payment),2)
+-- HAVING SUM(amount)> (SELECT AVG(amount) FROM payment)
+-- SUM (amount) AS total_paid
